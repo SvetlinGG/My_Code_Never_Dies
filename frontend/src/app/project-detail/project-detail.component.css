@@ -247,7 +247,38 @@
   font-family: 'Georgia', serif;
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .mausoleum::before,
+  .mausoleum::after {
+    width: 35%;
+    opacity: 0.3;
+  }
+  
+  .mausoleum-entrance {
+    max-width: 700px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+  .mausoleum::before,
+  .mausoleum::after {
+    width: 25%;
+    opacity: 0.2;
+    background-size: 300% 100%;
+  }
+  
+  .mausoleum {
+    padding: 1.5rem;
+  }
+  
+  .back-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
   .door-content {
     padding: 2rem 1.5rem;
   }
@@ -256,8 +287,27 @@
     font-size: 2rem;
   }
   
+  .project-year {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
   .description {
     font-size: 1.1rem;
+  }
+  
+  .epitaph {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+  
+  .tech-stack {
+    margin: 2rem 0;
+  }
+  
+  .tech-stack h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
   }
   
   .tech-list {
@@ -268,6 +318,148 @@
     padding: 0.6rem 1rem;
     font-size: 0.9rem;
   }
+  
+  .rip-banner {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .mausoleum::before,
+  .mausoleum::after {
+    width: 20%;
+    opacity: 0.15;
+  }
+  
+  .mausoleum {
+    padding: 1rem;
+  }
+  
+  .back-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .door-arch {
+    height: 40px;
+  }
+  
+  .door-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .project-title {
+    font-size: 1.5rem;
+  }
+  
+  .project-year {
+    font-size: 0.9rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .epitaph {
+    padding: 1rem;
+  }
+  
+  .tech-stack h3 {
+    font-size: 1.1rem;
+  }
+  
+  .tech-item {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .rip-banner {
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+  }
 }
 
 
+
+
+/* Back button hover effect */
+.back-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.back-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(139, 0, 0, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.back-button:hover::after {
+  left: 100%;
+}
+
+/* Mausoleum door entrance animation */
+.mausoleum-door {
+  animation: doorAppear 0.8s ease-out;
+}
+
+@keyframes doorAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Tech item hover */
+.tech-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(139, 0, 0, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+}
+
+.tech-item:hover::before {
+  width: 200px;
+  height: 200px;
+}
+
+/* RIP banner animation */
+.rip-banner {
+  animation: ripGlow 3s ease-in-out infinite;
+}
+
+@keyframes ripGlow {
+  0%, 100% {
+    text-shadow: 
+      0 0 20px rgba(139, 0, 0, 0.8),
+      2px 2px 6px rgba(0, 0, 0, 0.9);
+  }
+  50% {
+    text-shadow: 
+      0 0 30px rgba(139, 0, 0, 1),
+      0 0 50px rgba(139, 0, 0, 0.6),
+      2px 2px 6px rgba(0, 0, 0, 0.9);
+  }
+}

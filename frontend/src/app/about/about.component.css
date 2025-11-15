@@ -207,7 +207,44 @@
   font-family: 'Georgia', serif;
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .catacombs::before,
+  .catacombs::after {
+    width: 35%;
+    opacity: 0.3;
+  }
+  
+  .timeline-item {
+    margin-bottom: 3rem;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+  .catacombs::before,
+  .catacombs::after {
+    width: 25%;
+    opacity: 0.2;
+    background-size: 300% 100%;
+  }
+  
+  .catacombs {
+    padding: 1.5rem;
+  }
+  
+  .catacombs-header {
+    margin-bottom: 1rem;
+  }
+  
+  .catacombs-title {
+    font-size: 1.8rem;
+  }
+  
+  .catacombs-subtitle {
+    font-size: 0.9rem;
+  }
+  
   .timeline::before {
     left: 20px;
   }
@@ -237,5 +274,91 @@
   
   .timeline-description {
     font-size: 1rem;
+  }
+  
+  .timeline-item {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .catacombs::before,
+  .catacombs::after {
+    width: 20%;
+    opacity: 0.15;
+  }
+  
+  .catacombs {
+    padding: 1rem;
+  }
+  
+  .catacombs-title {
+    font-size: 1.5rem;
+  }
+  
+  .timeline-content {
+    padding: 1rem;
+  }
+  
+  .timeline-year {
+    font-size: 1.2rem;
+  }
+  
+  .timeline-title {
+    font-size: 1rem;
+  }
+  
+  .timeline-description {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* Timeline marker pulse */
+.timeline-marker {
+  animation: markerPulse 2s ease-in-out infinite;
+}
+
+@keyframes markerPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.8);
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(139, 0, 0, 1), 0 0 50px rgba(139, 0, 0, 0.5);
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+/* Timeline line glow */
+.timeline::before {
+  animation: lineGlow 4s ease-in-out infinite;
+}
+
+@keyframes lineGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.8);
+  }
+}
+
+/* Timeline content hover */
+.timeline-content {
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  animation: contentFloat 0.5s ease-in-out;
+}
+
+@keyframes contentFloat {
+  0%, 100% {
+    transform: scale(1.02);
+  }
+  50% {
+    transform: scale(1.03) translateY(-5px);
   }
 }

@@ -256,8 +256,29 @@
   display: block;
 }
 
-/* Responsive */
+/* Tablet */
+@media (max-width: 1024px) {
+  .haunted-cemetery::before,
+  .haunted-cemetery::after {
+    width: 35%;
+    opacity: 0.3;
+  }
+  
+  .tombstones {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.8rem;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+  .haunted-cemetery::before,
+  .haunted-cemetery::after {
+    width: 25%;
+    opacity: 0.2;
+    background-size: 300% 100%;
+  }
+  
   .tombstones {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1.5rem;
@@ -279,6 +300,109 @@
   .rip {
     font-size: 0.8rem;
   }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .haunted-cemetery::before,
+  .haunted-cemetery::after {
+    width: 20%;
+    opacity: 0.15;
+  }
+  
+  .tombstones {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .graveyard {
+    padding: 0.5rem 1rem 1rem;
+  }
+  
+  .graveyard-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
 }
 
 
+
+
+/* Tombstone hover microinteractions */
+.tombstone {
+  position: relative;
+}
+
+.tombstone::before {
+  content: '👻';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  font-size: 2rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.tombstone:hover::before {
+  transform: translateX(-50%) scale(1);
+  opacity: 1;
+  animation: ghostFloat 2s ease-in-out infinite;
+}
+
+@keyframes ghostFloat {
+  0%, 100% {
+    top: -30px;
+  }
+  50% {
+    top: -40px;
+  }
+}
+
+.stone-link:hover .stone {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px) rotate(-2deg); }
+  75% { transform: translateX(5px) rotate(2deg); }
+}
+
+/* Fog effect enhancement */
+.fog {
+  animation: fogMove 8s ease-in-out infinite, fogPulse 4s ease-in-out infinite;
+}
+
+@keyframes fogPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.5; }
+}
+
+/* Title glow pulse */
+.title {
+  animation: flicker 3s infinite, titleGlow 2s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    text-shadow: 
+      0 0 20px rgba(139, 0, 0, 0.8),
+      0 0 40px rgba(139, 0, 0, 0.5);
+  }
+  50% {
+    text-shadow: 
+      0 0 30px rgba(139, 0, 0, 1),
+      0 0 60px rgba(139, 0, 0, 0.7),
+      0 0 80px rgba(139, 0, 0, 0.4);
+  }
+}

@@ -149,3 +149,50 @@
 .nav-spacer {
   height: 70px;
 }
+
+
+/* Navigation microinteractions */
+.nav-logo {
+  animation: logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.nav-link {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '☠';
+  position: absolute;
+  left: -20px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.nav-link:hover::before {
+  left: -15px;
+  opacity: 1;
+}
+
+.haunted-nav {
+  animation: navGlow 4s ease-in-out infinite;
+}
+
+@keyframes navGlow {
+  0%, 100% {
+    box-shadow: 0 5px 20px rgba(139, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 5px 30px rgba(139, 0, 0, 0.5);
+  }
+}

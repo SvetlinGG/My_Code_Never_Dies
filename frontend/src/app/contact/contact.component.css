@@ -236,7 +236,32 @@
   animation-delay: 1s;
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .seance-room::before,
+  .seance-room::after {
+    width: 35%;
+    opacity: 0.3;
+  }
+  
+  .seance-table {
+    max-width: 500px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
+  .seance-room::before,
+  .seance-room::after {
+    width: 25%;
+    opacity: 0.2;
+    background-size: 300% 100%;
+  }
+  
+  .seance-room {
+    padding: 1.5rem;
+  }
+  
   .seance-table {
     padding: 2rem 1.5rem;
   }
@@ -245,13 +270,159 @@
     font-size: 2rem;
   }
   
+  .seance-subtitle {
+    font-size: 1rem;
+  }
+  
   .form-input,
   .form-textarea {
     padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+  
+  .form-label {
+    font-size: 1rem;
   }
   
   .submit-button {
     padding: 1rem 1.5rem;
     font-size: 1.1rem;
+  }
+  
+  .candles {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .seance-room::before,
+  .seance-room::after {
+    width: 20%;
+    opacity: 0.15;
+  }
+  
+  .seance-room {
+    padding: 1rem;
+  }
+  
+  .seance-table {
+    padding: 1.5rem 1rem;
+  }
+  
+  .seance-title {
+    font-size: 1.5rem;
+  }
+  
+  .seance-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-form {
+    gap: 1rem;
+  }
+  
+  .form-input,
+  .form-textarea {
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+  
+  .form-textarea {
+    min-height: 120px;
+  }
+  
+  .submit-button {
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+  }
+  
+  .candle {
+    width: 6px;
+    height: 30px;
+  }
+  
+  .candle::before {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+/* Candle flicker enhancement */
+.candle::before {
+  animation: candleFlicker 2s ease-in-out infinite, candleGlow 3s ease-in-out infinite;
+}
+
+@keyframes candleGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 102, 0, 1), 0 0 40px rgba(255, 102, 0, 0.5);
+  }
+}
+
+/* Form input focus effects */
+.form-input:focus,
+.form-textarea:focus {
+  animation: inputPulse 1s ease-in-out;
+}
+
+@keyframes inputPulse {
+  0% {
+    box-shadow: 
+      inset 0 2px 5px rgba(0, 0, 0, 0.5),
+      0 0 15px rgba(139, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 
+      inset 0 2px 5px rgba(0, 0, 0, 0.5),
+      0 0 25px rgba(139, 0, 0, 0.6);
+  }
+  100% {
+    box-shadow: 
+      inset 0 2px 5px rgba(0, 0, 0, 0.5),
+      0 0 15px rgba(139, 0, 0, 0.3);
+  }
+}
+
+/* Submit button hover effect */
+.submit-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.submit-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Seance room pulse */
+.seance-room::before {
+  animation: roomPulse 8s ease-in-out infinite;
+}
+
+@keyframes roomPulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.5;
   }
 }
