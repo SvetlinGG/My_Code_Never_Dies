@@ -17,31 +17,19 @@
 .haunted-cemetery::before {
   content: '';
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
-  transform: translateY(-50%);
-  width: 120vh;
-  height: 120vh;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 800'%3E%3Cdefs%3E%3Cfilter id='roughen'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='3' result='noise'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='noise' scale='3'/%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url(%23roughen)'%3E%3C!-- Cranium --%3E%3Cpath d='M 200 50 Q 250 50 280 80 Q 300 100 305 130 Q 310 160 305 190 Q 300 220 285 245 L 285 280 Q 285 300 275 315 L 260 340 L 240 360 L 220 370 L 200 375 L 200 800' fill='%23000' opacity='0.4'/%3E%3C!-- Cracks and texture --%3E%3Cpath d='M 220 100 Q 225 120 230 140 M 270 110 Q 265 130 260 150 M 240 180 Q 245 200 250 220' stroke='%23000' stroke-width='2' fill='none' opacity='0.3'/%3E%3C!-- Eye socket (large and hollow) --%3E%3Cellipse cx='240' cy='180' rx='35' ry='45' fill='%23000' opacity='0.9'/%3E%3Cellipse cx='240' cy='175' rx='30' ry='40' fill='%23000' opacity='0.95'/%3E%3Cellipse cx='235' cy='170' rx='15' ry='20' fill='%23000' opacity='1'/%3E%3C!-- Eye socket inner shadows --%3E%3Cpath d='M 210 160 Q 220 180 230 200 M 250 160 Q 260 180 270 200' stroke='%23000' stroke-width='3' fill='none' opacity='0.6'/%3E%3C!-- Nasal cavity (triangular and dark) --%3E%3Cpath d='M 200 240 L 220 280 L 200 300 L 180 280 Z' fill='%23000' opacity='0.95'/%3E%3Cpath d='M 200 245 L 215 275 L 200 290 L 185 275 Z' fill='%23000' opacity='1'/%3E%3C!-- Cheekbone definition --%3E%3Cpath d='M 270 220 Q 260 240 250 260 L 240 280' stroke='%23000' stroke-width='4' fill='none' opacity='0.5'/%3E%3C!-- Upper teeth (irregular and broken) --%3E%3Cpath d='M 180 320 L 185 345 L 180 350 M 190 318 L 195 348 L 190 352 M 200 315 L 205 350 L 200 355 M 210 318 L 215 348 L 210 352 M 220 320 L 225 345 L 220 350' stroke='%23000' stroke-width='5' fill='none' opacity='0.8' stroke-linecap='round'/%3E%3C!-- Jaw cracks --%3E%3Cpath d='M 200 360 Q 210 365 220 370 M 200 375 Q 215 380 230 385' stroke='%23000' stroke-width='2' fill='none' opacity='0.4'/%3E%3C!-- Additional texture and wear --%3E%3Ccircle cx='245' cy='140' r='8' fill='%23000' opacity='0.3'/%3E%3Ccircle cx='265' cy='200' r='6' fill='%23000' opacity='0.25'/%3E%3Cpath d='M 230 250 Q 235 260 240 270 M 250 240 Q 255 255 260 270' stroke='%23000' stroke-width='1.5' fill='none' opacity='0.3'/%3E%3C/g%3E%3C/svg%3E");
+  right: 0;
+  bottom: 0;
+  background-image: url('https://getwallpapers.com/wallpaper/full/5/1/e/265210.jpg');
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  background-position: left center;
-  opacity: 0.6;
+  opacity: 0.3;
   pointer-events: none;
   z-index: 0;
-  filter: blur(1px) contrast(1.3);
-  animation: skullBreath 6s ease-in-out infinite;
-}
-
-@keyframes skullBreath {
-  0%, 100% {
-    transform: translateY(-50%) scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(-51%) scale(1.02);
-    opacity: 0.7;
-  }
+  filter: grayscale(100%) contrast(1.5) brightness(0.4);
+  mix-blend-mode: multiply;
 }
 
 /* Hero Section */
