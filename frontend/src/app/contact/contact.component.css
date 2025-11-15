@@ -13,28 +13,29 @@
   content: '';
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  height: 700px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M100 20 C80 20 65 30 60 50 C55 45 50 42 45 42 C35 42 28 50 28 60 C28 65 30 70 33 73 C25 78 20 88 20 100 C20 120 35 135 55 135 L55 160 C55 165 58 170 63 173 L63 180 L75 180 L75 173 C78 171 80 168 80 165 L80 135 L85 135 L85 165 C85 168 87 171 90 173 L90 180 L110 180 L110 173 C113 171 115 168 115 165 L115 135 L120 135 L120 165 C120 168 122 171 125 173 L125 180 L137 180 L137 173 C142 170 145 165 145 160 L145 135 C165 135 180 120 180 100 C180 88 175 78 167 73 C170 70 172 65 172 60 C172 50 165 42 155 42 C150 42 145 45 140 50 C135 30 120 20 100 20 Z M75 80 C80 80 85 85 85 90 C85 95 80 100 75 100 C70 100 65 95 65 90 C65 85 70 80 75 80 Z M125 80 C130 80 135 85 135 90 C135 95 130 100 125 100 C120 100 115 95 115 90 C115 85 120 80 125 80 Z M70 110 L80 120 L90 110 L110 110 L120 120 L130 110 L130 115 L120 125 L110 115 L90 115 L80 125 L70 115 Z' fill='rgba(0,0,0,0.15)'/%3E%3C/svg%3E");
-  background-size: contain;
+  left: 0;
+  transform: translateY(-50%);
+  width: 120vh;
+  height: 120vh;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 800'%3E%3Cdefs%3E%3Cfilter id='roughen'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='3' result='noise'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='noise' scale='3'/%3E%3C/filter%3E%3C/defs%3E%3Cg filter='url(%23roughen)'%3E%3C!-- Cranium --%3E%3Cpath d='M 200 50 Q 250 50 280 80 Q 300 100 305 130 Q 310 160 305 190 Q 300 220 285 245 L 285 280 Q 285 300 275 315 L 260 340 L 240 360 L 220 370 L 200 375 L 200 800' fill='%23000' opacity='0.4'/%3E%3C!-- Cracks and texture --%3E%3Cpath d='M 220 100 Q 225 120 230 140 M 270 110 Q 265 130 260 150 M 240 180 Q 245 200 250 220' stroke='%23000' stroke-width='2' fill='none' opacity='0.3'/%3E%3C!-- Eye socket (large and hollow) --%3E%3Cellipse cx='240' cy='180' rx='35' ry='45' fill='%23000' opacity='0.9'/%3E%3Cellipse cx='240' cy='175' rx='30' ry='40' fill='%23000' opacity='0.95'/%3E%3Cellipse cx='235' cy='170' rx='15' ry='20' fill='%23000' opacity='1'/%3E%3C!-- Eye socket inner shadows --%3E%3Cpath d='M 210 160 Q 220 180 230 200 M 250 160 Q 260 180 270 200' stroke='%23000' stroke-width='3' fill='none' opacity='0.6'/%3E%3C!-- Nasal cavity (triangular and dark) --%3E%3Cpath d='M 200 240 L 220 280 L 200 300 L 180 280 Z' fill='%23000' opacity='0.95'/%3E%3Cpath d='M 200 245 L 215 275 L 200 290 L 185 275 Z' fill='%23000' opacity='1'/%3E%3C!-- Cheekbone definition --%3E%3Cpath d='M 270 220 Q 260 240 250 260 L 240 280' stroke='%23000' stroke-width='4' fill='none' opacity='0.5'/%3E%3C!-- Upper teeth (irregular and broken) --%3E%3Cpath d='M 180 320 L 185 345 L 180 350 M 190 318 L 195 348 L 190 352 M 200 315 L 205 350 L 200 355 M 210 318 L 215 348 L 210 352 M 220 320 L 225 345 L 220 350' stroke='%23000' stroke-width='5' fill='none' opacity='0.8' stroke-linecap='round'/%3E%3C!-- Jaw cracks --%3E%3Cpath d='M 200 360 Q 210 365 220 370 M 200 375 Q 215 380 230 385' stroke='%23000' stroke-width='2' fill='none' opacity='0.4'/%3E%3C!-- Additional texture and wear --%3E%3Ccircle cx='245' cy='140' r='8' fill='%23000' opacity='0.3'/%3E%3Ccircle cx='265' cy='200' r='6' fill='%23000' opacity='0.25'/%3E%3Cpath d='M 230 250 Q 235 260 240 270 M 250 240 Q 255 255 260 270' stroke='%23000' stroke-width='1.5' fill='none' opacity='0.3'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.25;
+  background-position: left center;
+  opacity: 0.65;
   pointer-events: none;
-  z-index: 0;
-  animation: skullFloat 8s ease-in-out infinite;
+  z-index: 1;
+  filter: blur(1px) contrast(1.3);
+  animation: skullBreath 6s ease-in-out infinite;
 }
 
-@keyframes skullFloat {
+@keyframes skullBreath {
   0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.25;
+    transform: translateY(-50%) scale(1);
+    opacity: 0.65;
   }
   50% {
-    transform: translate(-50%, -48%) scale(1.05);
-    opacity: 0.15;
+    transform: translateY(-51%) scale(1.02);
+    opacity: 0.75;
   }
 }
 
