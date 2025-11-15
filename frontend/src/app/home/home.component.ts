@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { SpiderWebComponent } from '../shared/spider-web/spider-web.component';
+import { FireSoundDirective } from '../shared/fire-sound/fire-sound.directive';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, SpiderWebComponent],
+  imports: [RouterLink, SpiderWebComponent, FireSoundDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

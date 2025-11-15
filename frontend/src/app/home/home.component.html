@@ -12,7 +12,7 @@
     <h2 class="graveyard-title">Project Graveyard</h2>
     <div class="tombstones">
       @for (project of projects; track project.name) {
-        <div class="tombstone">
+        <div class="tombstone" appFireSound>
           <a [routerLink]="['/projects', project.slug]" class="stone-link">
             <div class="stone">
               <div class="stone-top"></div>
