@@ -50,6 +50,7 @@
   margin-bottom: 1rem;
   animation: flicker 3s infinite;
   z-index: 1;
+  position: relative;
 }
 
 @keyframes flicker {
@@ -242,3 +243,5 @@
     font-size: 0.8rem;
   }
 }
+
+

@@ -1,5 +1,5 @@
 .mausoleum {
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(to bottom, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
   display: flex;
   justify-content: center;
@@ -99,6 +99,7 @@
     2px 2px 4px rgba(0, 0, 0, 0.9);
   margin-bottom: 0.5rem;
   animation: flicker 3s infinite;
+  position: relative;
 }
 
 @keyframes flicker {

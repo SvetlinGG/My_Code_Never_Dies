@@ -1,5 +1,5 @@
 .seance-room {
-  min-height: 100vh;
+  height: 100vh;
   background: linear-gradient(to bottom, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
   display: flex;
   justify-content: center;
@@ -53,6 +53,7 @@
     0 0 40px rgba(139, 0, 0, 0.5);
   margin-bottom: 0.5rem;
   animation: flicker 3s infinite;
+  position: relative;
 }
 
 @keyframes flicker {
