@@ -16,7 +16,7 @@ Angular 18 + Node.js/Express fullstack application.
 
 ## Project Structure
 
-- `/frontend` - Angular 18 application (runs on http://localhost:4200)
+- `/frontend` - Angular 18 application (runs on http://localhost:5000)
 - `/backend` - Node.js + Express API (runs on http://localhost:3000)
 - `/.kiro` - Kiro configuration, specs, steering, and hooks
 

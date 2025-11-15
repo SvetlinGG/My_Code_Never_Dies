@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.haunted-cemetery {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0a0a1a 0%, #1a1a2e 50%, #16213e 100%);
+  color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.fog {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to top, rgba(200, 200, 220, 0.3), transparent);
+  animation: fogMove 8s ease-in-out infinite;
+}
+
+@keyframes fogMove {
+  0%, 100% { opacity: 0.3; transform: translateX(0); }
+  50% { opacity: 0.5; transform: translateX(20px); }
+}
+
+.title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-family: 'Georgia', serif;
+  color: #8b0000;
+  text-shadow: 0 0 20px rgba(139, 0, 0, 0.8), 0 0 40px rgba(139, 0, 0, 0.5);
+  margin-bottom: 1rem;
+  animation: flicker 3s infinite;
+  z-index: 1;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+  75% { opacity: 0.9; }
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #b0b0b0;
+  font-style: italic;
+  z-index: 1;
+}
+
+/* Graveyard Section */
+.graveyard {
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.graveyard-title {
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: #8b0000;
+  margin-bottom: 3rem;
+  font-family: 'Georgia', serif;
+  text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
+}
+
+.tombstones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.tombstone {
+  display: flex;
+  justify-content: center;
+  animation: rise 0.8s ease-out;
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.stone {
+  width: 180px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.stone:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+
+.stone-top {
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(135deg, #4a4a4a 0%, #2a2a2a 100%);
+  border-radius: 50% 50% 0 0;
+  border: 3px solid #1a1a1a;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.stone-body {
+  background: linear-gradient(135deg, #5a5a5a 0%, #3a3a3a 100%);
+  padding: 2rem 1rem;
+  border: 3px solid #1a1a1a;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  text-align: center;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stone-body h3 {
+  font-size: 1.2rem;
+  color: #d4d4d4;
+  margin-bottom: 0.5rem;
+  font-family: 'Georgia', serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.rip {
+  font-size: 0.9rem;
+  color: #8b0000;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tombstones {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+  }
+  
+  .stone {
+    width: 150px;
+  }
+}

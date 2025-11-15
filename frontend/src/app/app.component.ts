@@ -9,5 +9,14 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'frontend';
+  title = 'Haunted Cemetery';
+  
+  projects = [
+    { name: 'Weather App' },
+    { name: 'AI Health Assistant' },
+    { name: 'JS Quiz' },
+    { name: 'Movie Library' },
+    { name: 'Face Off' },
+    { name: 'Echo Persona' }
+  ];
 }
