@@ -11,6 +11,36 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.haunted-cemetery::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M100 20 C80 20 65 30 60 50 C55 45 50 42 45 42 C35 42 28 50 28 60 C28 65 30 70 33 73 C25 78 20 88 20 100 C20 120 35 135 55 135 L55 160 C55 165 58 170 63 173 L63 180 L75 180 L75 173 C78 171 80 168 80 165 L80 135 L85 135 L85 165 C85 168 87 171 90 173 L90 180 L110 180 L110 173 C113 171 115 168 115 165 L115 135 L120 135 L120 165 C120 168 122 171 125 173 L125 180 L137 180 L137 173 C142 170 145 165 145 160 L145 135 C165 135 180 120 180 100 C180 88 175 78 167 73 C170 70 172 65 172 60 C172 50 165 42 155 42 C150 42 145 45 140 50 C135 30 120 20 100 20 Z M75 80 C80 80 85 85 85 90 C85 95 80 100 75 100 C70 100 65 95 65 90 C65 85 70 80 75 80 Z M125 80 C130 80 135 85 135 90 C135 95 130 100 125 100 C120 100 115 95 115 90 C115 85 120 80 125 80 Z M70 110 L80 120 L90 110 L110 110 L120 120 L130 110 L130 115 L120 125 L110 115 L90 115 L80 125 L70 115 Z' fill='rgba(0,0,0,0.15)'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+  animation: skullFloat 8s ease-in-out infinite;
+}
+
+@keyframes skullFloat {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -48%) scale(1.05);
+    opacity: 0.2;
+  }
 }
 
 /* Hero Section */

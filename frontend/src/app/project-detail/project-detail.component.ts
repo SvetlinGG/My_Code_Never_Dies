@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { SpiderWebComponent } from '../shared/spider-web/spider-web.component';
 
 @Component({
   selector: 'app-project-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SpiderWebComponent],
   templateUrl: './project-detail.component.html',
   styleUrl: './project-detail.component.css'
 })

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { SpiderWebComponent } from '../shared/spider-web/spider-web.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, SpiderWebComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
