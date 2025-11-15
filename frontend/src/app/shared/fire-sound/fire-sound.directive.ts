@@ -12,10 +12,11 @@ export class FireSoundDirective implements OnInit, OnDestroy {
   ngOnInit() {
     // Create audio element with fire crackling sound
     this.audio = new Audio();
-    // Using a fire sound from a free sound library
-    this.audio.src = 'https://assets.mixkit.co/active_storage/sfx/2355/2355-preview.mp3';
+    // Using a fire sound - trying multiple sources for better compatibility
+    this.audio.src = 'https://cdn.pixabay.com/audio/2022/03/10/audio_4a468b9c38.mp3';
     this.audio.loop = true;
-    this.audio.volume = 0.3;
+    this.audio.volume = 0.7;
+    this.audio.preload = 'auto';
     this.audio.load();
   }
 
@@ -23,9 +24,21 @@ export class FireSoundDirective implements OnInit, OnDestroy {
   onMouseEnter() {
     if (this.audio && window.innerWidth > 768) {
       this.audio.currentTime = 0;
-      this.audio.play().catch(err => {
-        console.log('Audio play failed:', err);
-      });
+      this.audio.volume = 0.7;
+      
+      const playPromise = this.audio.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          console.log('Fire sound playing');
+        }).catch(err => {
+          console.log('Audio play failed - user interaction may be required:', err);
+          // Try alternative sound source
+          this.audio!.src = 'https://www.soundjay.com/nature/sounds/fire-1.mp3';
+          this.audio!.load();
+          this.audio!.play().catch(e => console.log('Alternative source also failed:', e));
+        });
+      }
     }
   }
 
