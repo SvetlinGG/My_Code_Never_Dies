@@ -9,6 +9,40 @@
   overflow: hidden;
 }
 
+.mausoleum::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background-image: url('https://img.freepik.com/premium-photo/split-skull-art-realistic-skull-illustration_85952-9551.jpg');
+  background-size: 200% 100%;
+  background-position: left center;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+  filter: grayscale(50%) brightness(0.6);
+}
+
+.mausoleum::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background-image: url('https://img.freepik.com/premium-photo/split-skull-art-realistic-skull-illustration_85952-9551.jpg');
+  background-size: 200% 100%;
+  background-position: right center;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+  filter: grayscale(50%) brightness(0.6);
+}
+
 .mausoleum::after {
   content: '';
   position: absolute;
@@ -236,20 +270,4 @@
   }
 }
 
-.mausoleum::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: url('https://getwallpapers.com/wallpaper/full/5/1/e/265210.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.3;
-  pointer-events: none;
-  z-index: 0;
-  filter: grayscale(100%) contrast(1.5) brightness(0.4);
-  mix-blend-mode: multiply;
-}
+
