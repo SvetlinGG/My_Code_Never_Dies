@@ -1,0 +1,56 @@
+<div class="seance-room">
+  <div class="seance-table">
+    <h1 class="seance-title">Séance Room</h1>
+    <p class="seance-subtitle">Summon me through the veil...</p>
+    
+    <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+      <div class="form-group">
+        <label class="form-label" for="name">Your Name</label>
+        <input 
+          type="text" 
+          id="name" 
+          name="name"
+          class="form-input"
+          [(ngModel)]="formData.name"
+          placeholder="Who calls upon the spirits?"
+          required
+        />
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label" for="email">Your Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email"
+          class="form-input"
+          [(ngModel)]="formData.email"
+          placeholder="Where shall I send my reply?"
+          required
+        />
+      </div>
+      
+      <div class="form-group">
+        <label class="form-label" for="message">Your Message</label>
+        <textarea 
+          id="message" 
+          name="message"
+          class="form-textarea"
+          [(ngModel)]="formData.message"
+          placeholder="Speak your message into the darkness..."
+          required
+        ></textarea>
+      </div>
+      
+      <button type="submit" class="submit-button" [disabled]="!contactForm.form.valid">
+        Summon the Developer
+      </button>
+    </form>
+    
+    <div class="candles">
+      <div class="candle"></div>
+      <div class="candle"></div>
+      <div class="candle"></div>
+    </div>
+  </div>
+</div>

@@ -1,26 +1,2 @@
-<div class="haunted-cemetery">
-  <div class="hero-section">
-    <div class="fog"></div>
-    <h1 class="title">Welcome to the Haunted Cemetery</h1>
-    <p class="subtitle">Where dead projects come to life...</p>
-  </div>
-
-  <div class="graveyard">
-    <h2 class="graveyard-title">Project Graveyard</h2>
-    <div class="tombstones">
-      @for (project of projects; track project.name) {
-        <div class="tombstone">
-          <div class="stone">
-            <div class="stone-top"></div>
-            <div class="stone-body">
-              <h3>{{ project.name }}</h3>
-              <p class="rip">R.I.P.</p>
-            </div>
-          </div>
-        </div>
-      }
-    </div>
-  </div>
-</div>
-
+<app-navigation></app-navigation>
 <router-outlet />

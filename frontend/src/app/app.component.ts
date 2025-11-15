@@ -1,22 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NavigationComponent } from './navigation/navigation.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NavigationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'Haunted Cemetery';
-  
-  projects = [
-    { name: 'Weather App' },
-    { name: 'AI Health Assistant' },
-    { name: 'JS Quiz' },
-    { name: 'Movie Library' },
-    { name: 'Face Off' },
-    { name: 'Echo Persona' }
-  ];
 }

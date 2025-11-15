@@ -212,6 +212,12 @@
   letter-spacing: 2px;
 }
 
+.stone-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .tombstones {
@@ -235,10 +241,4 @@
   .rip {
     font-size: 0.8rem;
   }
-}
-
-.stone-link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
 }

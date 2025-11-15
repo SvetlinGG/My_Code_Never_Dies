@@ -1,0 +1,28 @@
+<div class="mausoleum" *ngIf="project">
+  <div class="mausoleum-entrance">
+    <button class="back-button" (click)="goBack()">
+      <span class="arrow">←</span> Return to Cemetery
+    </button>
+    
+    <div class="mausoleum-door">
+      <div class="door-arch"></div>
+      <div class="door-content">
+        <h1 class="project-title">{{ project.name }}</h1>
+        <p class="project-year">Est. {{ project.year }}</p>
+        
+        <div class="epitaph">
+          <p class="description">{{ project.description }}</p>
+        </div>
+        
+        <div class="tech-stack">
+          <h3>Technologies Used:</h3>
+          <div class="tech-list">
+            <span class="tech-item" *ngFor="let tech of project.tech">{{ tech }}</span>
+          </div>
+        </div>
+        
+        <div class="rip-banner">R.I.P.</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="catacombs">
+  <div class="catacombs-header">
+    <h1 class="catacombs-title">Catacombs of Experience</h1>
+    <p class="catacombs-subtitle">A journey through time and code...</p>
+  </div>
+
+  <div class="timeline">
+    @for (item of timeline; track item.year) {
+      <div class="timeline-item">
+        <div class="timeline-marker"></div>
+        <div class="timeline-content">
+          <div class="timeline-year">{{ item.year }}</div>
+          <h3 class="timeline-title">{{ item.title }}</h3>
+          <p class="timeline-description">{{ item.description }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>
