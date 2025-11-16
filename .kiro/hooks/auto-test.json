@@ -1,0 +1,27 @@
+{
+  "name": "Auto Test on Save",
+  "description": "Automatically run tests when TypeScript files are saved",
+  "trigger": {
+    "type": "onSave",
+    "filePattern": "**/*.{ts,spec.ts}"
+  },
+  "enabled": false,
+  "actions": [
+    {
+      "type": "command",
+      "command": "npm test -- --watch=false --browsers=ChromeHeadless",
+      "workingDirectory": "frontend"
+    }
+  ],
+  "conditions": {
+    "excludePatterns": [
+      "**/*.spec.ts",
+      "**/node_modules/**",
+      "**/.angular/**"
+    ]
+  },
+  "notifications": {
+    "onSuccess": "✅ Tests passed!",
+    "onFailure": "❌ Tests failed - check output"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Lint Check on Commit",
+  "description": "Run ESLint before committing code",
+  "trigger": {
+    "type": "preCommit"
+  },
+  "enabled": true,
+  "actions": [
+    {
+      "type": "command",
+      "command": "npm run lint",
+      "workingDirectory": "frontend",
+      "continueOnError": false
+    }
+  ],
+  "notifications": {
+    "onSuccess": "✅ Linting passed - ready to commit",
+    "onFailure": "❌ Linting failed - fix errors before committing"
+  }
+}

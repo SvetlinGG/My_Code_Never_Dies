@@ -1,0 +1,22 @@
+{
+  "name": "Restart API on Backend Changes",
+  "description": "Automatically restart backend server when server.js is modified",
+  "trigger": {
+    "type": "onSave",
+    "filePattern": "backend/**/*.js"
+  },
+  "enabled": false,
+  "actions": [
+    {
+      "type": "command",
+      "command": "npm run dev",
+      "workingDirectory": "backend",
+      "killExisting": true
+    }
+  ],
+  "notifications": {
+    "onSuccess": "🔄 Backend server restarted",
+    "onFailure": "❌ Failed to restart backend"
+  },
+  "note": "Nodemon already handles this automatically, so this hook is disabled by default"
+}

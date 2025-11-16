@@ -1,0 +1,28 @@
+{
+  "name": "Auto Format on Save",
+  "description": "Automatically format code when files are saved",
+  "trigger": {
+    "type": "onSave",
+    "filePattern": "**/*.{ts,js,html,css,json}"
+  },
+  "enabled": true,
+  "actions": [
+    {
+      "type": "format",
+      "formatter": "prettier",
+      "options": {
+        "singleQuote": true,
+        "trailingComma": "es5",
+        "tabWidth": 2,
+        "semi": true
+      }
+    }
+  ],
+  "conditions": {
+    "excludePatterns": [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/.angular/**"
+    ]
+  }
+}

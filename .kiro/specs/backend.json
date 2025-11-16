@@ -1,0 +1,174 @@
+{
+  "name": "Haunted Cemetery Backend API",
+  "version": "1.0.0",
+  "description": "Node.js + Express REST API for portfolio backend",
+  "framework": "Express.js",
+  "language": "JavaScript (Node.js)",
+  "runtime": "Node.js v20+",
+  "architecture": {
+    "type": "RESTful API",
+    "pattern": "MVC-lite (Routes + Controllers in one file)",
+    "dataStorage": "In-memory (array of objects)"
+  },
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/health",
+      "description": "Health check endpoint",
+      "authentication": false,
+      "response": {
+        "status": "ok",
+        "message": "Backend is running"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects",
+      "description": "Get list of all projects",
+      "authentication": false,
+      "response": {
+        "success": true,
+        "data": [
+          {
+            "slug": "string",
+            "name": "string",
+            "year": "string",
+            "status": "string"
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/:slug",
+      "description": "Get detailed information about a specific project",
+      "authentication": false,
+      "parameters": {
+        "slug": "Project identifier (e.g., 'weather-app')"
+      },
+      "response": {
+        "success": true,
+        "data": {
+          "slug": "string",
+          "name": "string",
+          "description": "string",
+          "tech": ["array of strings"],
+          "year": "string",
+          "status": "string",
+          "features": ["array of strings"]
+        }
+      },
+      "errors": {
+        "404": "Project not found"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/contact",
+      "description": "Submit contact form",
+      "authentication": false,
+      "requestBody": {
+        "name": "string (required)",
+        "email": "string (required, valid email)",
+        "message": "string (required)"
+      },
+      "validation": [
+        "All fields required",
+        "Email format validation with regex",
+        "Non-empty strings"
+      ],
+      "response": {
+        "success": true,
+        "message": "Your message has been sent to the spirit realm!"
+      },
+      "errors": {
+        "400": "Validation error (missing fields or invalid email)",
+        "500": "Server error"
+      },
+      "logging": "Logs all submissions to console with timestamp"
+    }
+  ],
+  "projects": [
+    {
+      "slug": "weather-app",
+      "name": "Weather App",
+      "tech": ["Angular", "TypeScript", "Weather API", "RxJS"],
+      "year": "2023"
+    },
+    {
+      "slug": "ai-health-assistant",
+      "name": "AI Health Assistant",
+      "tech": ["Python", "TensorFlow", "Flask", "scikit-learn"],
+      "year": "2023"
+    },
+    {
+      "slug": "js-quiz",
+      "name": "JS Quiz",
+      "tech": ["JavaScript", "HTML", "CSS", "LocalStorage"],
+      "year": "2022"
+    },
+    {
+      "slug": "movie-library",
+      "name": "Movie Library",
+      "tech": ["React", "Node.js", "MongoDB", "Express"],
+      "year": "2023"
+    },
+    {
+      "slug": "face-off",
+      "name": "Face Off",
+      "tech": ["Python", "OpenCV", "Face Recognition", "NumPy"],
+      "year": "2022"
+    },
+    {
+      "slug": "echo-persona",
+      "name": "Echo Persona",
+      "tech": ["Node.js", "NLP", "Express", "OpenAI API"],
+      "year": "2023"
+    }
+  ],
+  "middleware": [
+    {
+      "name": "cors",
+      "description": "Enable Cross-Origin Resource Sharing",
+      "config": "Default (allow all origins)"
+    },
+    {
+      "name": "express.json",
+      "description": "Parse JSON request bodies"
+    }
+  ],
+  "errorHandling": {
+    "404": "Custom 404 handler for unknown routes",
+    "validation": "Returns 400 with error message",
+    "server": "Returns 500 with generic error message"
+  },
+  "environment": {
+    "PORT": "3000 (default)",
+    "NODE_ENV": "development",
+    "EMAIL_USER": "Optional - for Nodemailer",
+    "EMAIL_PASS": "Optional - for Nodemailer",
+    "CONTACT_EMAIL": "Optional - recipient email",
+    "RESEND_API_KEY": "Optional - for Resend API"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "futureEnhancements": [
+    "Database integration (MongoDB/PostgreSQL)",
+    "Email sending with Nodemailer or Resend",
+    "Authentication and authorization",
+    "Rate limiting",
+    "Request logging middleware",
+    "API documentation with Swagger",
+    "Unit and integration tests"
+  ]
+}
