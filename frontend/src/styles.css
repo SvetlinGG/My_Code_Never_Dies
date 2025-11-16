@@ -193,3 +193,218 @@ body::after {
 .mausoleum {
   animation: backgroundFlash 12s infinite;
 }
+
+
+/* Lightning Bolt Strikes */
+.lightning-bolt {
+  position: fixed;
+  top: -10%;
+  width: 3px;
+  height: 0;
+  background: linear-gradient(to bottom, 
+    rgba(100, 150, 255, 1) 0%,
+    rgba(150, 200, 255, 1) 20%,
+    rgba(200, 220, 255, 0.9) 40%,
+    rgba(150, 200, 255, 0.7) 60%,
+    rgba(100, 150, 255, 0.5) 80%,
+    transparent 100%);
+  box-shadow: 
+    0 0 10px rgba(100, 150, 255, 1),
+    0 0 20px rgba(150, 200, 255, 0.8),
+    0 0 30px rgba(200, 220, 255, 0.6),
+    0 0 40px rgba(100, 150, 255, 0.4);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transform-origin: top center;
+}
+
+/* Lightning bolt 1 - Left side */
+.lightning-bolt-1 {
+  left: 15%;
+  animation: lightningStrike1 12s infinite;
+}
+
+/* Lightning bolt 2 - Center */
+.lightning-bolt-2 {
+  left: 50%;
+  animation: lightningStrike2 12s infinite;
+}
+
+/* Lightning bolt 3 - Right side */
+.lightning-bolt-3 {
+  right: 20%;
+  animation: lightningStrike3 12s infinite;
+}
+
+/* Lightning bolt 4 - Far left */
+.lightning-bolt-4 {
+  left: 30%;
+  animation: lightningStrike4 12s infinite;
+}
+
+/* Lightning bolt 5 - Far right */
+.lightning-bolt-5 {
+  right: 35%;
+  animation: lightningStrike5 12s infinite;
+}
+
+@keyframes lightningStrike1 {
+  0%, 100% {
+    height: 0;
+    opacity: 0;
+  }
+  8% {
+    height: 0;
+    opacity: 0;
+  }
+  8.1% {
+    height: 120vh;
+    opacity: 1;
+    filter: brightness(2);
+  }
+  8.3% {
+    height: 120vh;
+    opacity: 0;
+  }
+  8.5% {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes lightningStrike2 {
+  0%, 100% {
+    height: 0;
+    opacity: 0;
+  }
+  25% {
+    height: 0;
+    opacity: 0;
+  }
+  25.1% {
+    height: 130vh;
+    opacity: 1;
+    filter: brightness(2.5);
+  }
+  25.4% {
+    height: 130vh;
+    opacity: 0;
+  }
+  25.6% {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes lightningStrike3 {
+  0%, 100% {
+    height: 0;
+    opacity: 0;
+  }
+  50% {
+    height: 0;
+    opacity: 0;
+  }
+  50.1% {
+    height: 140vh;
+    opacity: 1;
+    filter: brightness(2);
+  }
+  50.2% {
+    height: 140vh;
+    opacity: 0.5;
+  }
+  50.3% {
+    height: 140vh;
+    opacity: 1;
+    filter: brightness(2.5);
+  }
+  50.5% {
+    height: 140vh;
+    opacity: 0;
+  }
+  50.7% {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes lightningStrike4 {
+  0%, 100% {
+    height: 0;
+    opacity: 0;
+  }
+  75% {
+    height: 0;
+    opacity: 0;
+  }
+  75.1% {
+    height: 125vh;
+    opacity: 1;
+    filter: brightness(2);
+  }
+  75.3% {
+    height: 125vh;
+    opacity: 0;
+  }
+  75.5% {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes lightningStrike5 {
+  0%, 100% {
+    height: 0;
+    opacity: 0;
+  }
+  50.2% {
+    height: 0;
+    opacity: 0;
+  }
+  50.3% {
+    height: 135vh;
+    opacity: 0.8;
+    filter: brightness(2);
+  }
+  50.5% {
+    height: 135vh;
+    opacity: 0;
+  }
+  50.7% {
+    height: 0;
+    opacity: 0;
+  }
+}
+
+/* Jagged lightning bolt effect */
+.lightning-bolt::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -1px;
+  width: 5px;
+  height: 100%;
+  background: inherit;
+  filter: blur(2px);
+}
+
+.lightning-bolt::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 7px;
+  height: 100%;
+  background: rgba(200, 220, 255, 0.3);
+  filter: blur(5px);
+}
+
+/* Mobile optimization - fewer bolts */
+@media (max-width: 768px) {
+  .lightning-bolt-4,
+  .lightning-bolt-5 {
+    display: none;
+  }
+}
