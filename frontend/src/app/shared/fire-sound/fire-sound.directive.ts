@@ -23,7 +23,7 @@ export class FireSoundDirective implements OnInit, OnDestroy {
       // Using a fire sound - trying multiple sources for better compatibility
       this.audio.src = 'https://cdn.pixabay.com/audio/2022/03/10/audio_4a468b9c38.mp3';
       this.audio.loop = true;
-      this.audio.volume = 0.7;
+      this.audio.volume = 0.85;
       this.audio.preload = 'auto';
       this.audio.load();
     }
@@ -33,7 +33,7 @@ export class FireSoundDirective implements OnInit, OnDestroy {
   onMouseEnter() {
     if (this.isBrowser && this.audio && window.innerWidth > 768) {
       this.audio.currentTime = 0;
-      this.audio.volume = 0.7;
+      this.audio.volume = 0.85;
       
       const playPromise = this.audio.play();
       
