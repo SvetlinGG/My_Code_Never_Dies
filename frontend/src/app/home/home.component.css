@@ -95,37 +95,44 @@
 .hanging-spider-left,
 .hanging-spider-right {
   position: absolute;
-  top: -10px;
+  top: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: swingTitleSpider 5s ease-in-out infinite;
+  animation: swingTitleSpider 6s ease-in-out infinite;
   transform-origin: top center;
 }
 
 .hanging-spider-left {
-  left: -40px;
+  left: 15%;
   animation-delay: 0s;
 }
 
 .hanging-spider-right {
-  right: -40px;
-  animation-delay: 2.5s;
+  right: 15%;
+  animation-delay: 3s;
 }
 
 .spider-thread-title {
   width: 1px;
-  height: 60px;
   background: linear-gradient(to bottom, rgba(200, 200, 200, 0.6), rgba(200, 200, 200, 0.3));
   display: block;
   box-shadow: 0 0 2px rgba(200, 200, 200, 0.4);
+}
+
+.hanging-spider-left .spider-thread-title {
+  height: 28vh;
+}
+
+.hanging-spider-right .spider-thread-title {
+  height: 45vh;
 }
 
 .spider-large {
   font-size: 2.5rem;
   display: block;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.8));
-  animation: spiderWiggle 3s ease-in-out infinite;
+  animation: spiderWiggle 4s ease-in-out infinite;
 }
 
 @keyframes swingTitleSpider {
@@ -133,13 +140,13 @@
     transform: rotate(0deg);
   }
   25% {
-    transform: rotate(12deg);
+    transform: rotate(5deg);
   }
   50% {
     transform: rotate(0deg);
   }
   75% {
-    transform: rotate(-12deg);
+    transform: rotate(-5deg);
   }
 }
 
@@ -147,14 +154,8 @@
   0%, 100% {
     transform: rotate(0deg) scale(1);
   }
-  25% {
-    transform: rotate(-5deg) scale(1.05);
-  }
   50% {
-    transform: rotate(0deg) scale(1);
-  }
-  75% {
-    transform: rotate(5deg) scale(0.95);
+    transform: rotate(2deg) scale(1.02);
   }
 }
 
