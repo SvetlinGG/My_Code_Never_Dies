@@ -186,6 +186,23 @@
   overflow: hidden;
 }
 
+.graveyard::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background-image: url('https://img.freepik.com/premium-photo/skulls-lava-surrealism-is-scary-monster-made-lava-pile-skulls-3d-illustration_86390-8614.jpg');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+  z-index: 0;
+  pointer-events: none;
+  filter: brightness(0.6) contrast(1.2);
+}
+
 .graveyard-title {
   text-align: center;
   font-size: clamp(1.2rem, 2.5vw, 2rem);
@@ -194,6 +211,8 @@
   font-family: 'Georgia', serif;
   text-shadow: 0 0 10px rgba(139, 0, 0, 0.5);
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .tombstones {
@@ -207,6 +226,8 @@
   flex: 1;
   justify-items: center;
   perspective: 1200px;
+  position: relative;
+  z-index: 1;
 }
 
 .tombstone {
@@ -716,3 +737,73 @@
 }
 
 
+
+/* Bone pile at bottom */
+.bone-pile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(10, 10, 26, 0.98) 0%, rgba(10, 10, 26, 0.8) 50%, transparent 100%);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 10px 20px;
+  z-index: 150;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bone-item {
+  font-size: 2.5rem;
+  filter: grayscale(30%) brightness(0.7) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+  animation: bonePile 8s ease-in-out infinite;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.bone-item:nth-child(odd) {
+  transform: rotate(-15deg);
+  animation-delay: 0s;
+}
+
+.bone-item:nth-child(even) {
+  transform: rotate(15deg);
+  animation-delay: 1s;
+}
+
+.bone-item:nth-child(3n) {
+  font-size: 3rem;
+  animation-delay: 2s;
+}
+
+.bone-item:nth-child(5n) {
+  font-size: 2rem;
+  animation-delay: 1.5s;
+}
+
+@keyframes bonePile {
+  0%, 100% {
+    transform: translateY(0) rotate(var(--rotate, 0deg));
+  }
+  50% {
+    transform: translateY(-3px) rotate(var(--rotate, 0deg));
+  }
+}
+
+/* Responsive bone pile */
+@media (max-width: 768px) {
+  .bone-pile {
+    height: 80px;
+  }
+  
+  .bone-item {
+    font-size: 2rem;
+  }
+  
+  .bone-item:nth-child(3n) {
+    font-size: 2.5rem;
+  }
+}
