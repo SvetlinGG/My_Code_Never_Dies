@@ -63,6 +63,24 @@ const projects = [
     year: '2023',
     status: 'completed',
     features: ['Conversational AI', 'Context awareness', 'Personality customization', 'Multi-language support']
+  },
+  {
+    slug: 'judge',
+    name: 'Judge',
+    description: 'The ultimate arbiter that judges your code from beyond the grave. An automated code review system that evaluates quality, style, and best practices.',
+    tech: ['TypeScript', 'Node.js', 'ESLint', 'AST Parser'],
+    year: '2024',
+    status: 'completed',
+    features: ['Automated code review', 'Style enforcement', 'Best practice detection', 'Custom rule configuration']
+  },
+  {
+    slug: 'kiroween',
+    name: 'Kiroween',
+    description: 'Where Halloween meets AI in an eternal dance of darkness. A spooky AI-powered experience that brings Halloween to life with interactive stories and eerie predictions.',
+    tech: ['Angular', 'AI/ML', 'WebGL', 'Three.js'],
+    year: '2024',
+    status: 'completed',
+    features: ['AI-generated horror stories', 'Interactive 3D scenes', 'Spooky predictions', 'Atmospheric sound design']
   }
 ];
 

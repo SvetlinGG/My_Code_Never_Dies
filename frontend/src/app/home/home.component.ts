@@ -17,6 +17,8 @@ export class HomeComponent {
     { name: 'JS Quiz', slug: 'js-quiz' },
     { name: 'Movie Library', slug: 'movie-library' },
     { name: 'Face Off', slug: 'face-off' },
-    { name: 'Echo Persona', slug: 'echo-persona' }
+    { name: 'Echo Persona', slug: 'echo-persona' },
+    { name: 'Judge', slug: 'judge' },
+    { name: 'Kiroween', slug: 'kiroween' }
   ];
 }
