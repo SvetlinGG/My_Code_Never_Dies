@@ -18,7 +18,7 @@ export class MouseFogDirective implements OnInit {
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
-    // Only on desktop (screen width > 768px)
+    
     if (window.innerWidth > 768) {
       this.createSmoke(event.clientX, event.clientY);
     }
@@ -27,7 +27,7 @@ export class MouseFogDirective implements OnInit {
   private createSmoke(x: number, y: number) {
     const smoke = this.renderer.createElement('div');
     
-    // Random size for variation
+    
     const size = Math.random() * 80 + 60;
     
     // Smoke styles
