@@ -1,0 +1,19 @@
+<div class="bats-container">
+  @for (bat of bats; track bat.id) {
+    <div class="bat" [style.animation-delay]="bat.delay + 's'">
+      <svg class="bat-svg" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
+        <!-- Left Wing -->
+        <path class="wing left-wing" d="M 20,25 Q 5,15 2,25 Q 5,30 15,28 Z" fill="#1a1a1a" />
+        <!-- Right Wing -->
+        <path class="wing right-wing" d="M 80,25 Q 95,15 98,25 Q 95,30 85,28 Z" fill="#1a1a1a" />
+        <!-- Body -->
+        <ellipse cx="50" cy="25" rx="8" ry="12" fill="#0a0a0a" />
+        <!-- Head -->
+        <circle cx="50" cy="18" r="6" fill="#0a0a0a" />
+        <!-- Ears -->
+        <path d="M 47,14 L 45,10 L 48,15 Z" fill="#0a0a0a" />
+        <path d="M 53,14 L 55,10 L 52,15 Z" fill="#0a0a0a" />
+      </svg>
+    </div>
+  }
+</div>
