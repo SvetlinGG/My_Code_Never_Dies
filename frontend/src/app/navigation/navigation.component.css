@@ -11,6 +11,34 @@
   padding: 1rem 2rem;
 }
 
+.haunted-nav::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: 
+    radial-gradient(ellipse 3px 15px at 5% 0%, #8b0000 0%, transparent 100%),
+    radial-gradient(ellipse 4px 20px at 12% 0%, #a00000 0%, transparent 100%),
+    radial-gradient(ellipse 3px 12px at 18% 0%, #8b0000 0%, transparent 100%),
+    radial-gradient(ellipse 5px 25px at 25% 0%, #900000 0%, transparent 100%),
+    radial-gradient(ellipse 3px 18px at 32% 0%, #8b0000 0%, transparent 100%),
+    radial-gradient(ellipse 4px 22px at 40% 0%, #a00000 0%, transparent 100%),
+    radial-gradient(ellipse 3px 15px at 48% 0%, #8b0000 0%, transparent 100%),
+    radial-gradient(ellipse 5px 28px at 55% 0%, #900000 0%, transparent 100%),
+    radial-gradient(ellipse 3px 16px at 63% 0%, #8b0000 0%, transparent 100%),
+    radial-gradient(ellipse 4px 20px at 70% 0%, #a00000 0%, transparent 100%),
+    radial-gradient(ellipse 3px 14px at 77% 0%, #8b0000 0%, transparent 100%),
+    radial-gradient(ellipse 5px 24px at 85% 0%, #900000 0%, transparent 100%),
+    radial-gradient(ellipse 3px 18px at 92% 0%, #8b0000 0%, transparent 100%),
+    radial-gradient(ellipse 4px 16px at 97% 0%, #a00000 0%, transparent 100%);
+  pointer-events: none;
+  animation: bloodDrip 3s ease-in-out infinite;
+  opacity: 0.9;
+  filter: blur(0.5px);
+}
+
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -194,5 +222,20 @@
   }
   50% {
     box-shadow: 0 5px 30px rgba(139, 0, 0, 0.5);
+  }
+}
+
+@keyframes bloodDrip {
+  0% {
+    transform: scaleY(0.8);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scaleY(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0.8);
+    opacity: 0.9;
   }
 }
