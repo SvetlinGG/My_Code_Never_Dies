@@ -88,6 +88,74 @@
   animation: flicker 3s infinite;
   z-index: 1;
   position: relative;
+  display: inline-block;
+}
+
+/* Hanging spiders from title */
+.hanging-spider-left,
+.hanging-spider-right {
+  position: absolute;
+  top: -10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: swingTitleSpider 5s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.hanging-spider-left {
+  left: -40px;
+  animation-delay: 0s;
+}
+
+.hanging-spider-right {
+  right: -40px;
+  animation-delay: 2.5s;
+}
+
+.spider-thread-title {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(200, 200, 200, 0.6), rgba(200, 200, 200, 0.3));
+  display: block;
+  box-shadow: 0 0 2px rgba(200, 200, 200, 0.4);
+}
+
+.spider-large {
+  font-size: 2.5rem;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.8));
+  animation: spiderWiggle 3s ease-in-out infinite;
+}
+
+@keyframes swingTitleSpider {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(12deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-12deg);
+  }
+}
+
+@keyframes spiderWiggle {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-5deg) scale(1.05);
+  }
+  50% {
+    transform: rotate(0deg) scale(1);
+  }
+  75% {
+    transform: rotate(5deg) scale(0.95);
+  }
 }
 
 @keyframes flicker {
