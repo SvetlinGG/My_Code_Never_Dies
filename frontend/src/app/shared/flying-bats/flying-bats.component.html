@@ -1,6 +1,6 @@
 <div class="bats-container">
   @for (bat of bats; track bat.id) {
-    <div class="bat" [style.animation-delay]="bat.delay + 's'">
+    <div class="bat" [class.bat-attack]="bat.type === 'attack'" [style.animation-delay]="bat.delay + 's'">
       <svg class="bat-svg" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">
         <!-- Left Wing -->
         <path class="wing left-wing" d="M 20,25 Q 5,15 2,25 Q 5,30 15,28 Z" fill="#1a1a1a" />
@@ -13,6 +13,11 @@
         <!-- Ears -->
         <path d="M 47,14 L 45,10 L 48,15 Z" fill="#0a0a0a" />
         <path d="M 53,14 L 55,10 L 52,15 Z" fill="#0a0a0a" />
+        <!-- Eyes (red for attacking bats) -->
+        @if (bat.type === 'attack') {
+          <circle cx="47" cy="18" r="1.5" fill="#ff0000" class="bat-eye" />
+          <circle cx="53" cy="18" r="1.5" fill="#ff0000" class="bat-eye" />
+        }
       </svg>
     </div>
   }

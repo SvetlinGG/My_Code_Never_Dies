@@ -11,11 +11,13 @@ import { CommonModule } from '@angular/common';
 })
 export class FlyingBatsComponent {
   bats = [
-    { id: 1, delay: 0 },
-    { id: 2, delay: 3 },
-    { id: 3, delay: 6 },
-    { id: 4, delay: 9 },
-    { id: 5, delay: 12 }
+    { id: 1, delay: 0, type: 'across' },
+    { id: 2, delay: 3, type: 'attack' },
+    { id: 3, delay: 6, type: 'across' },
+    { id: 4, delay: 9, type: 'attack' },
+    { id: 5, delay: 12, type: 'across' },
+    { id: 6, delay: 15, type: 'attack' },
+    { id: 7, delay: 18, type: 'across' }
   ];
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
